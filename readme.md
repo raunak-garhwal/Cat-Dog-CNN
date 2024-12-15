@@ -20,8 +20,7 @@ Follow the steps below to set up and run the project on your local machine:
 
 ### Step 1: Clone the Repository
 ```bash
-# Clone the repository to your local machine
-git clone <repository-url>
+git clone https://github.com/raunak-garhwal/Cat-Dog-CNN.git
 ```
 
 ### Step 2: Install Required Libraries
