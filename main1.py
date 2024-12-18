@@ -106,5 +106,4 @@ prediction = make_prediction(image_path)
 print(f"\nThe image provided is of a '{prediction}'.")
 
 
-
-# taking too much time to run
+# taking too much time and resources to run
