@@ -98,6 +98,7 @@ classifier.fit(
     validation_steps=63
 )
 
+'''
 # Step 12: Making new predictions
 # Function to predict whether a new image is a cat or a dog
 def make_prediction(image_path):
@@ -119,9 +120,39 @@ def make_prediction(image_path):
         return 'Dog'
     else:
         return 'Cat'
+'''
+
+# Updated Step 12: Making new predictions
+# Function to predict whether a new image is a cat, dog, or neither
+def make_prediction(image_path, threshold=0.6):
+    """
+    Predicts if the image is a Cat, Dog, or Neither based on confidence.
+
+    Parameters:
+    - image_path: Path to the input image
+    - threshold: Confidence threshold for prediction (default is 0.6)
+
+    Returns:
+    - String: 'Dog', 'Cat', or 'Neither Cat nor Dog'
+    """
+    # Load the image and preprocess
+    test_image = image.load_img(image_path, target_size=(64, 64))
+    test_image = image.img_to_array(test_image)
+    test_image = np.expand_dims(test_image, axis=0)
+
+    # Get the prediction probability
+    result = classifier.predict(test_image)[0][0]
+
+    # Classify based on threshold and confidence
+    if result > threshold:
+        return 'Dog'
+    elif result < (1 - threshold):
+        return 'Cat'
+    else:
+        return 'Neither Cat nor Dog'
 
 # Example Prediction
 # Testing the prediction function with a sample image
 # Replace 'test-image-1.png' with the actual path of the image to test
-prediction = make_prediction('dataset/single_prediction/test-image-1.jpg')
+prediction = make_prediction('dataset/single_prediction/test-image-4.jpg')
 print(f"\nThe image provided is of a '{prediction}'.")
