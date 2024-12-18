@@ -110,5 +110,5 @@ image_path = 'dataset/single_prediction/test-image-4.jpg'
 prediction = make_prediction(image_path)
 print(f"\nThe image provided is of a '{prediction}'.")
 
-# not working as expected
+# different approach to solve but also not working as expected
 # lion image ---> predicting dog

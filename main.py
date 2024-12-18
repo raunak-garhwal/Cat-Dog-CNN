@@ -156,3 +156,6 @@ def make_prediction(image_path, threshold=0.6):
 # Replace 'test-image-1.png' with the actual path of the image to test
 prediction = make_prediction('dataset/single_prediction/test-image-4.jpg')
 print(f"\nThe image provided is of a '{prediction}'.")
+
+# not working as expected
+# lion image ---> predicting dog
